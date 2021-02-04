@@ -51,6 +51,32 @@ class Owner
     Dog.new(name, self)
  end
 
+
+def walk_dogs
+  Dog.all.select{|dog| dog.mood = "happy"}
+end
+
+def feed_cats
+  Cat.all.select{|cat| cat.mood = "happy"}
+end
+
+
+def sell_pets
+  Dog.all.select{|dog| dog.mood = "nervous"}
+  Cat.all.select{|cat| cat.mood = "nervous"}
+  Dog.all.select{|dog| dog.owner = nil}
+  Cat.all.select{|cat| cat.owner = nil}
+end
+
+
+def list_pets
+  return "I have #{@owner.dogs.count}  dog(s), and #{@owner.cats.count}  cat(s)."
+end
+
+
+
+
+
 end
 
 #binding.pry
