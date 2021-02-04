@@ -73,11 +73,7 @@ def list_pets
   return "I have #{dogs.count} dog(s), and #{cats.count} cat(s)."
 end
 
-
-
-
-
 end
 
-#binding.pry
+binding.pry
 0
