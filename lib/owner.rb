@@ -1,4 +1,10 @@
+require 'pry'
+require_relative 'dog'
+require_relative 'cat'
+
 class Owner
+
+
   # code goes here
   @@all = []
   attr_reader :name, :species
@@ -8,7 +14,7 @@ class Owner
     @species = species
     @name = name
     @@all << self
-  end
+  end 
 
   def say_species
     return "I am a human."
@@ -17,4 +23,35 @@ class Owner
   def self.all
     @@all
   end
+
+  def self.count
+    @@all.count
+  end
+
+  def self.reset_all
+    @@all = []
+  end
+
+  def cats
+    Cat.all.select{|cat| cat.owner == self}
+  end
+
+  def dogs
+    Dog.all.select{|dog| dog.owner == self}
+  end
+
+
+  def buy_cat(name)
+      Cat.new(name, self)
+
+  end
+
+
+  def buy_dog(name)
+    Dog.new(name, self)
+ end
+
 end
+
+#binding.pry
+0
