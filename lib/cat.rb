@@ -1,4 +1,10 @@
 class Cat
   # code goes here
-  #Hello World
+  attr_reader :name, :species
+  #attr_accessor :species
+
+  def initialize(name, owner)
+    @name = name 
+    @owner = owner
+  end
 end
