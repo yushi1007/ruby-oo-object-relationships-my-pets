@@ -21,6 +21,7 @@ class Owner
   end
 
   def self.all
+    #binding pry
     @@all
   end
 
@@ -33,6 +34,7 @@ class Owner
   end
 
   def cats
+   # binding.pry
     Cat.all.select{|cat| cat.owner == self}
   end
 
@@ -75,5 +77,5 @@ end
 
 end
 
-binding.pry
-0
+#binding.pry
+#0
